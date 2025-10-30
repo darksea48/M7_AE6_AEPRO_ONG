@@ -8,9 +8,9 @@ class VoluntarioForm(forms.ModelForm):
         model = Voluntario
         fields = ['nombre', 'email' , 'telefono']
         labels = {
-            'nombre': 'Nombre',
-            'email': 'Email',
-            'telefono': 'Telefono',    
+            'nombre': 'Ingresa tu nombre',
+            'email': 'Ingresa tu email',
+            'telefono': 'Ingresa tu telefono',    
         }
         widgets = {
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
@@ -20,7 +20,8 @@ class VoluntarioForm(forms.ModelForm):
         
 class EventoForm(forms.ModelForm):
     class Meta:
-        model = Evento ['titulo', 'descripcion', 'fecha']
+        model = Evento 
+        field = ['titulo', 'descripcion', 'fecha']
         labels = {
             'titulo': 'Titulo del evento',
             'descripcion': 'Descripcion del Evento',
