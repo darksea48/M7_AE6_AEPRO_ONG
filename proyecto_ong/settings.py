@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'gestor_ong',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,7 +82,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
     },
-    'other': {
+    'otro': {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "db_ong",
         "USER": "root",

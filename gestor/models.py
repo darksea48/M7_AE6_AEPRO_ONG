@@ -17,6 +17,8 @@ class Evento(models.Model):
     descripcion = models.TextField()
     fecha = models.DateField()
     voluntarios = models.ManyToManyField(Voluntario, related_name="eventos")
+    fecha_creacion = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    fecha_actualizacion = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self):
         return self.titulo

@@ -1,10 +1,18 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from gestor.models import Voluntario, Evento
 from gestor.forms import VoluntarioForm, EventoForm
+from datetime import timezone
+
+def main_view(request):
+    return render(request, 'base.html')
 
 def lista_voluntarios(request):
     voluntarios = Voluntario.objects.all()
     return render(request, 'voluntarios_list.html', {'voluntarios': voluntarios})
+
+def ver_voluntario(request, id):
+    voluntario = get_object_or_404(Voluntario, id=id)
+    return render(request, 'voluntario_detail.html', {'voluntario': voluntario})
 
 def crear_voluntario(request):
     if request.method == 'POST':
@@ -39,6 +47,10 @@ def eliminar_voluntario(request, id):
 def lista_eventos(request):
     eventos = Evento.objects.all()
     return render(request, 'eventos_list.html', {'eventos': eventos})
+
+def ver_evento(request, id):
+    evento = get_object_or_404(Evento, id=id)
+    return render(request, 'evento_detail.html', {'evento': evento})
 
 def crear_evento(request):
     if request.method == 'POST':

@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}Voluntarios{% endblock %}
 {% block content %}
+<div class="container mt-4">
 <h1 class="mb-3">Voluntarios</h1>
 
-<a href="{% url 'voluntario_create' %}" class="btn btn-primary mb-3">Nuevo voluntario</a>
+<a href="{% url 'voluntarios_create' %}" class="btn btn-primary mb-3">Nuevo voluntario</a>
 
 <table class="table table-striped table-hover">
   <thead>
@@ -11,7 +12,6 @@
       <th>Nombre</th>
       <th>Email</th>
       <th>Teléfono</th>
-      <th>Registrado</th>
       <th></th>
     </tr>
   </thead>
@@ -21,10 +21,10 @@
         <td>{{ v.nombre }}</td>
         <td>{{ v.email }}</td>
         <td>{{ v.telefono }}</td>
-        <td>{{ v.fecha_registro|date:"d/m/Y H:i" }}</td>
         <td>
-          <a href="{% url 'voluntario_update' v.id %}" class="btn btn-sm btn-warning">Editar</a>
-          <a href="{% url 'voluntario_delete' v.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+          <a href="{% url 'voluntarios_detail' v.id %}" class="btn btn-sm btn-primary me-2">Ver</a>
+          <a href="{% url 'voluntarios_update' v.id %}" class="btn btn-sm btn-warning">Editar</a>
+          <a href="{% url 'voluntarios_delete' v.id %}" class="btn btn-sm btn-danger eliminar">Eliminar</a>
         </td>
       </tr>
     {% empty %}
@@ -34,4 +34,5 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 {% endblock %}
