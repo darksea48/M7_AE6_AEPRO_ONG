@@ -75,7 +75,15 @@ WSGI_APPLICATION = 'proyecto_ong.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_ong',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'other': {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "db_ong",
         "USER": "root",
@@ -86,6 +94,8 @@ DATABASES = {
         }
     }
 }
+
+
 
 
 # Password validation
