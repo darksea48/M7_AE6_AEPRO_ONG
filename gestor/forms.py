@@ -7,14 +7,14 @@ class VoluntarioForm(forms.ModelForm):
         model = Voluntario
         fields = ['nombre', 'email' , 'telefono']
         labels = {
-            'nombre': 'Ingresa tu nombre',
-            'email': 'Ingresa tu email',
-            'telefono': 'Ingresa tu telefono',    
+            'nombre': 'Nombre del voluntario',
+            'email': 'Email del voluntario',
+            'telefono': 'Telefono del voluntario',
         }
         widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'telefono': forms.TextInput(attrs={'class': 'form-control'}),
+            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese el nombre completo'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese su email'}),
+            'telefono': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese su telefono'}),
         }
         
 class EventoForm(forms.ModelForm):
@@ -23,11 +23,11 @@ class EventoForm(forms.ModelForm):
         fields = ['titulo', 'descripcion', 'fecha']
         labels = {
             'titulo': 'Titulo del evento',
-            'descripcion': 'Descripcion del Evento',
-            'fecha': 'Fecha',    
+            'descripcion': 'Descripcion del evento',
+            'fecha': 'Fecha del evento',    
         }
         widgets = {
-            'titulo': forms.TextInput(attrs={'class': 'form-control'}),
+            'titulo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese el título del evento'}),
             'descripcion': forms.Textarea(attrs={'class': 'form-control','rows': 3}),
             'fecha': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}, format='%Y-%m-%d'),
         }
