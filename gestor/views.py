@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from gestor.models import Voluntario, Evento
-from gestor.formularios import VoluntarioForm, EventoForm
+from gestor.forms import VoluntarioForm, EventoForm
 
 def lista_voluntarios(request):
     voluntarios = Voluntario.objects.all()
